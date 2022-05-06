@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "angular-micro-frontend-chess-game"
-  }
+    "default": "angular-micro-frontend-chess",
+    "production": "angular-micro-frontend-chess"
+  },
+  "targets": {}
 }
