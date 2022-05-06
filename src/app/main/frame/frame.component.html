@@ -1,0 +1,33 @@
+<div class="mockup-container">
+  <div class="mockup-bg">
+    <div id="open-modal" class="modal-window">
+      <div>
+        <small>Player name</small>
+        <div class="d-flex justify-content-center">
+          <h1>{{ player?.full_name }}</h1>
+          <mat-icon *ngIf="hasToPlay" class="icon" color="warn" aria-hidden="false" aria-label="has to play"
+            >history</mat-icon
+          >
+        </div>
+        <div [appSpinnerLoader]="iframeLoading" class="frame-container">
+          <iframe
+            class="frame-view"
+            #iFrameElement
+            [name]="id"
+            [id]="id"
+            [src]="iframeRoute"
+            (load)="iframeLoaded()"
+            scrolling="no"></iframe>
+        </div>
+        <small>Country</small>
+        <h1><span [class]="'fi fi-' + player?.country?.code | lowercase"></span> {{ player?.country?.name }}</h1>
+        <small>Total moves</small>
+        <h1>{{ totalMoves }}</h1>
+        <small>Stop Watch</small>
+        <h1>{{ timerDisplay }}</h1>
+      </div>
+    </div>
+    <img src="assets/images/iphone-hero-bg.svg" alt="iPhone illustration" />
+  </div>
+  <img class="device-mockup" src="assets/images/iphone-hero.png" alt="iPhone Hero" />
+</div>

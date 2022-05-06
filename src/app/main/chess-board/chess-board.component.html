@@ -1,0 +1,8 @@
+<ngx-chess-board
+  [showLastMove]="true"
+  [lightDisabled]="isDark"
+  [darkDisabled]="!isDark"
+  (moveChange)="moveChange($event)"
+  [size]="300"
+  #board>
+</ngx-chess-board>

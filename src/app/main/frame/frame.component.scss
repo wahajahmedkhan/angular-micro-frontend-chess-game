@@ -1,0 +1,77 @@
+@use 'src/scss/colors' as *;
+@import 'src/scss/layout/mockups';
+
+.modal-window {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.3s;
+
+  & > div {
+    width: 246px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: white;
+    border-radius: 2rem;
+  }
+
+  header {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+}
+
+//
+//.container {
+//  display: grid;
+//  justify-content: center;
+//  align-items: center;
+//  height: 100vh;
+//}
+
+//.modal-window div:not(:last-of-type) {
+//  margin-bottom: 15px;
+//}
+.frame-container {
+  width: 302px;
+  margin-left: -28px;
+}
+
+.frame-view {
+  margin-left: -6px;
+  border: 0;
+  width: 19.5rem;
+  height: 20rem;
+  overflow-y: hidden;
+}
+
+.icon {
+  margin: 2px 0 0 5px;
+  animation: fade-in 1.6s infinite alternate;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,27 @@
+.mockup-container {
+  position: relative;
+}
+
+.mockup-bg {
+  img,
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto !important;
+    height: auto;
+    max-width: 300% !important;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.device-mockup {
+  position: relative;
+  width: 350px;
+  height: auto;
+  margin: 0 auto;
+  z-index: 2;
+  pointer-events: none;
+}

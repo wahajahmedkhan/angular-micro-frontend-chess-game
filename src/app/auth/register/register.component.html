@@ -1,0 +1,116 @@
+<div [appSpinnerLoader]="foamLoader">
+  <div class="col-sm-12 text-center">
+    <h1 class="p-2 pt-0 mb-3 font-bold">Register</h1>
+  </div>
+  <form [formGroup]="register_form" id="registration_form" (ngSubmit)="submit_form()">
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <mat-form-field id="country" class="w-100" appearance="outline">
+          <mat-label id="country_label">Country</mat-label>
+          <mat-select id="country_select" formControlName="country" autofocus>
+            <mat-option [id]="'country_option_' + i" *ngFor="let country of countries; let i = index" [value]="country">
+              <span [id]="'country_option_flag_' + i" [class]="'fi fi-' + country.code | lowercase"></span>
+              <span class="ms-2" [id]="'country_option_name_' + i">{{ country.name }}</span>
+            </mat-option>
+          </mat-select>
+          <span *ngIf="country.value" matPrefix [class]="'pre-fix fi fi-' + country.value.code | lowercase"></span>
+
+          <mat-hint id="country_hint" *ngIf="country.pristine"> Please enter your country </mat-hint>
+        </mat-form-field>
+        <mat-error *ngIf="country.touched && country.value?.length == 0">
+          country is <strong>required</strong>
+        </mat-error>
+      </div>
+      <div class="col-sm-12 col-md-6 mb-3">
+        <mat-form-field id="username" class="w-100" appearance="outline">
+          <mat-label id="username_label">Username</mat-label>
+          <input
+            id="username_input"
+            matInput
+            placeholder="Ex. JohnDoe123"
+            type="text"
+            name="user-name"
+            minlength="8"
+            autofocus
+            formControlName="username" />
+          <mat-hint id="username_hint" *ngIf="username.pristine">
+            Please enter your username, Minimum
+            <strong>8</strong>
+            characters
+          </mat-hint>
+        </mat-form-field>
+        <mat-error *ngIf="username.dirty && username.value?.length < 8">
+          Please enter a minimum of
+          <strong>8</strong>
+          characters
+        </mat-error>
+        <mat-error *ngIf="username.touched && username.value?.length == 0">
+          username is <strong>required</strong>
+        </mat-error>
+      </div>
+
+      <div class="col-sm-12 col-md-6 mb-3">
+        <mat-form-field id="password" class="w-100" appearance="outline">
+          <mat-label id="password_label">Password</mat-label>
+          <input
+            id="password_input"
+            name="password"
+            matInput
+            type="password"
+            minlength="8"
+            formControlName="password"
+            autocomplete="off" />
+          <mat-hint id="password_hint" *ngIf="password.pristine">
+            Please enter your password, Minimum
+            <strong>8</strong>
+            characters
+          </mat-hint>
+        </mat-form-field>
+        <mat-error *ngIf="password.dirty && password.value?.length < 8">
+          Please enter a minimum of
+          <strong>8</strong>
+          characters
+        </mat-error>
+        <mat-error *ngIf="password.touched && password.value?.length == 0">
+          password is <strong>required</strong>
+        </mat-error>
+      </div>
+      <div class="col-md-12 mb-3">
+        <mat-form-field id="email" class="w-100" appearance="outline">
+          <mat-label id="email_label">Email</mat-label>
+          <input
+            id="email_input"
+            type="email"
+            name="email"
+            matInput
+            placeholder="Ex. abc@email.com"
+            formControlName="email" />
+          <mat-hint id="email_hint" *ngIf="email.pristine">Please enter your email</mat-hint>
+        </mat-form-field>
+        <mat-error id="email_error_invalid" *ngIf="email.hasError('email') && !email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="email.touched && email.value?.length == 0"> email is <strong>required</strong> </mat-error>
+      </div>
+      <div class="col-md-12 mb-3">
+        <mat-form-field id="full_name" class="w-100" appearance="outline">
+          <mat-label id="full_name_label">Full name</mat-label>
+          <input id="full_name_input" matInput type="text" formControlName="full_name" placeholder="Ex. John Doe" />
+          <mat-hint id="full_name_hint" *ngIf="full_name.pristine">Please enter your full name (optional)</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button mat-button color="warn" type="reset" (click)="register_form.reset()">Reset</button>
+      <button
+        id="form-submit-button"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="mat-elevation-z0"
+        [disabled]="register_form.invalid">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

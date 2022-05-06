@@ -1,0 +1,68 @@
+<main>
+  <section class="hero text-center me-2" style="overflow-x: hidden">
+    <div class="hero-bg"></div>
+    <div class="hero-particles-container">
+      <canvas id="hero-particles"></canvas>
+    </div>
+    <div class="container-sm">
+      <div class="hero-inner">
+        <div class="hero-copy text-light">
+          <h1 class="hero-title mt-0">Chess Game</h1>
+          <div class="hero-cta">
+            <a class="button button-primary button-wide-mobile" (click)="logoutAndGoBack()">Go back</a>
+            <a class="button button-primary button-wide-mobile ms-2" (click)="toggleSound()"
+              >{{ isMute ? 'Unmute' : 'Mute' }}
+              <mat-icon class="bell-icon" color="warn" aria-hidden="false" aria-label="has to play">{{
+                isMute ? 'notifications_active' : 'notifications_off'
+              }}</mat-icon></a>
+            <a class="button button-primary button-wide-mobile ms-2" (click)="resetAll()">Reset</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <app-frame
+              [id]="window_id.frame_1"
+              [iframeRoute]="iframeUrl"
+              [player]="player1"
+              [hasToPlay]="!isFrame2HasToPlay"
+              [resetCount]="resetCounter"
+              (frameEmitter)="setFrame1 = $event"></app-frame>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <app-frame
+              [id]="window_id.frame_2"
+              [iframeRoute]="iframeUrl"
+              [player]="player2"
+              [hasToPlay]="isFrame2HasToPlay"
+              [resetCount]="resetCounter"
+              (frameEmitter)="setFrame2 = $event"></app-frame>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<audio style="visibility: hidden" #audioOption>
+  <source src="assets/sounds/mixkit-modern-classic-door-bell-sound-113.wav" type="audio/mp3" />
+</audio>
+
+<ng-template #gameOver>
+  <h2 mat-dialog-title>Game Over!</h2>
+  <mat-dialog-content class="mat-typography">
+    <h3>{{winnerName}} wins!</h3>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Replay</button>
+  </mat-dialog-actions>
+</ng-template>
+
+<ng-template #startDialog>
+  <h2 mat-dialog-title>Pencil Chess</h2>
+  <mat-dialog-content class="mat-typography">
+    <h3>Two Dummy Players are set</h3>
+    <p>This will be changed once they are moved to Firebase</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Start</button>
+  </mat-dialog-actions>
+</ng-template>

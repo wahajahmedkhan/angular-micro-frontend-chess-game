@@ -1,0 +1,39 @@
+<main class="bg-auth">
+  <div class="container-fluid">
+    <div data-test="auth-header">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-5 text-center">
+          <a>
+            <img
+              src="https://d9hhrg4mnvzow.cloudfront.net/tryspaces.pencilapp.com/bf51b9c4-space-beta.svg"
+              data-test="auth-logo"
+              class="auth-logo my-5"
+              alt="angular-micro-frontend-chess-game_logo_white" />
+          </a>
+
+          <label class="mobile-show logo-text mb-5">Lets play chess</label>
+        </div>
+      </div>
+    </div>
+
+    <div data-test="auth-body">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-5 text-center bg-auth-boxes">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+
+    <div data-test="auth-footer">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center p-0">
+          <h5 class="text-bottom">
+            By registering In here or using the pencil chess test, you agree that you have read and understood our
+            <a>Terms and Conditions</a>. Refer to our <a>Privacy Policy</a> for details how your information is
+            processed.
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
