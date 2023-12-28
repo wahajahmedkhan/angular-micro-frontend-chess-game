@@ -9,7 +9,7 @@ import {
   CountryService,
   FormsCommon,
   UserRegisterInterfaceMock,
-  UserSuccessfullyRegisteredMock,
+
 } from '@app-core';
 import {By} from '@angular/platform-browser';
 import {RegisterComponent} from './register.component';
@@ -36,8 +36,6 @@ describe('RegisterComponent', () => {
       ],
     }).compileComponents();
 
-    countryService = TestBed.inject(CountryService);
-    router = TestBed.inject(Router);
     authService = TestBed.inject(AuthService);
 
     form = new FormGroup({

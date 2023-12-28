@@ -32,6 +32,7 @@ export class ChessBoardComponent {
       case WindowEventEnum.configuration:
         this.id = e.data.data.id;
         this.isDark = e.data.data.isDark;
+        // eslint-disable-next-line no-case-declarations
         const moves = localStorage.getItem('moves');
         if (moves) {
           this.board.setFEN(moves);

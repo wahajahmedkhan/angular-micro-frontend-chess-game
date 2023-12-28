@@ -6,7 +6,7 @@ import {lastValueFrom} from 'rxjs';
 describe('CountryService', () => {
   let service: CountryService;
   let httpTestingController: HttpTestingController;
-  const apiMocker = (method: string, url: string, expectedResponse: any, body?: any) => {
+  const apiMocker = (method: string, url: string, expectedResponse: any) => {
     const req = httpTestingController.expectOne({
       method: method,
       url,

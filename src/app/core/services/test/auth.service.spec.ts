@@ -5,7 +5,7 @@ import {AuthService, UserRegisterInterfaceMock, UserSuccessfullyRegisteredMock} 
 describe('AuthService', () => {
   let service: AuthService;
   let httpTestingController: HttpTestingController;
-  const apiMocker = (method: string, url: string, expectedResponse: any, body?: any) => {
+  const apiMocker = (method: string, url: string, expectedResponse: any) => {
     const req = httpTestingController.expectOne({
       method: method,
       url,

@@ -4,7 +4,6 @@ import {MainComponent} from 'src/app/main/main.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
 import {MaterialModule} from '../shared/material/material.module';
 import {FrameComponent} from './frame/frame.component';
 
