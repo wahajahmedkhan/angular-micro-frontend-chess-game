@@ -1,31 +1,67 @@
+# Angular Micro-Frontend Chess Game
 
-# Angular Micro-frontend Chess Game
+## Introduction
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Welcome to the Angular Micro-Frontend Chess Game! This application is a modern take on the classic game of chess, crafted with Angular and incorporating micro-frontend architecture. Each player interacts with their own view of the chessboard, rendered in separate iframes, ensuring a unique and personalized gaming experience.
 
-# Demo
-[chess app](https://angular-micro-frontend-chess.web.app/app)
+## Features
 
-## Development server
+- **Micro-Frontend Iframes**: Each player has a dedicated iframe for their view of the chess game.
+- **Communication**: The iframes communicate using `window.postMessage`, ensuring smooth and efficient data transfer.
+- **Sound Effects**: Immersive audio plays with each move, enhancing the user experience.
+- **Stopwatch**: A built-in stopwatch tracks the duration of the game.
+- **Move Counter**: The app counts and displays the total number of moves made in each frame.
+- **Automated Deployment**: GitHub Actions are utilized for seamless deployment to Firebase.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Demo
 
-## Code scaffolding
+Experience the game firsthand at: [Angular Micro-Frontend Chess Game Demo](https://angular-micro-frontend-chess.web.app/app)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Dependencies
 
-## Build
+- Angular: `13.2.0`
+- TypeScript: `4.5.5`
+- Node: `17.0.18`
+- NGX-Chess-Board: `2.2.1`
+- Jest: `27.5.1`
+- Prettier: `2.5.1`
+- ESLint: `8.9.0`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting Started
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Install [Node.js](https://nodejs.org/) and NPM (Node Package Manager).
+- Install Angular CLI by running `npm install -g @angular/cli`
 
-## Running end-to-end tests
+### Installing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Clone the repository: `git clone https://github.com/wahajahmedkhan/angular-micro-frontend-chess-game.git`
+- Navigate into the directory: `cd angular-micro-frontend-chess-game`
+- Install dependencies: `npm install`
 
-## Further help
+## Running the application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Run `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Running the tests
+
+- Run `ng test` to execute the unit tests
+
+## Contributing
+
+Contributions to enhance the Angular Micro-Frontend Chess Game are welcome. Please read our [contribution](CONTRIBUTION.md)  guidelines before submitting your pull request.
+
+## Deployment
+
+This project is configured with GitHub Actions for continuous deployment. Every push to the main branch triggers a deployment process to Firebase.
+
+## Authors
+
+
+
+See also the list of [contributors](https://github.com/wahajahmedkhan/angular-micro-frontend-chess-game/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for more details.
